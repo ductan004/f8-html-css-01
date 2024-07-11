@@ -90,22 +90,40 @@
         />
         <link rel="stylesheet" href="./assets/fonts/stylesheet.css" />
         <link rel="stylesheet" href="./assets/css/style.css" />
+        <link rel="stylesheet" href="./assets/css/reponsive.css" />
+        <script
+            src="https://kit.fontawesome.com/d7a705b169.js"
+            crossorigin="anonymous"
+        ></script>
     </head>
     <body>
         <header class="fixed-header">
             <div class="content">
                 <nav class="navbar">
+                    <!-- Tablet Mobile menu -->
+                    <div class="menu-bars" id="bars">
+                        <i class="fa-solid fa-bars toggle-menu"></i>
+                    </div>
+
                     <!-- Logo -->
-                    <a href="#"
-                        ><img src="./assets/img/Logo.svg" alt="Besnik."
-                    /></a>
+                    <a href="#">
+                        <img
+                            src="./assets/img/Logo.svg"
+                            class="logo"
+                            alt="Besnik."
+                        />
+                    </a>
                     <!-- Navigation -->
-                    <ul>
+                    <ul id="pc-nav">
                         <li><a href="#">Home</a></li>
                         <li><a href="#features">Features</a></li>
                         <li><a href="#services">Services</a></li>
                         <li><a href="#resources">Resources</a></li>
                         <li><a href="#contact">Contact</a></li>
+                        <div class="action-btn__mobile .separate1">
+                            <li><a href="#contact">Sign In</a></li>
+                            <li><a href="#contact">Sign Up</a></li>
+                        </div>
                     </ul>
                     <!-- Action -->
                     <div class="actions">
@@ -115,6 +133,29 @@
                 </nav>
             </div>
         </header>
+
+        <!-- Tablet & mobile Header -->
+        <header class="mobile-header" id="mobile">
+            <!-- overlay -->
+            <div class="menu-ovelay" id="menu-ovelay"></div>
+
+            <!-- Menu Content -->
+            <div class="menu-drawer" id="menuDrawer">
+                <!-- Logo -->
+                <div class="menu-drawer__top">
+                    <a href="#">
+                        <img src="./assets/img/Logo.svg" alt="Besnik." />
+                    </a>
+                    <i
+                        class="fa-regular fa-circle-xmark icon-close"
+                        id="close-menu"
+                    ></i>
+                </div>
+
+                <ul id="mobile-nav"></ul>
+            </div>
+        </header>
+
         <main>
             <!-- hero -->
             <div class="hero-wrap">
@@ -155,7 +196,9 @@
                         <p class="desc">
                             More than 45,000+ companies trust besnik
                         </p>
-                        <p class="desc">5 Star Ratings (2k+ Review)</p>
+                        <p class="desc hide-on-mobile">
+                            5 Star Ratings (2k+ Review)
+                        </p>
                     </div>
 
                     <div class="images">
@@ -295,7 +338,10 @@
                                     >
                                 </h3>
                                 <p class="desc line-clamp">
-                                    8502 Preston Rd. Inglewood, Maine 98280
+                                    8502 Preston Rd. Inglewood, Maine 98280 8502
+                                    Preston Rd. Inglewood, Maine 98280 8502
+                                    Preston Rd. Inglewood, Maine 98280 8502
+                                    Preston Rd. Inglewood, Maine 98280
                                 </p>
                                 <div class="info">
                                     <img
@@ -401,6 +447,16 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="view-all">
+                        <a href="#!" class="link-moblie">
+                            View All Properties
+                            <img
+                                src="./assets/img/arrow-right.png"
+                                alt="arrow-right"
+                                class="arrow"
+                            />
+                        </a>
                     </div>
                 </div>
             </div>
@@ -711,5 +767,45 @@
                 </div>
             </div>
         </footer>
+
+        <script>
+            let bar = document.querySelector("#bars");
+            let menuOverlay = document.querySelector("#menu-ovelay");
+            let menuDrawer = document.querySelector("#menuDrawer");
+            let iconClose = document.querySelector("#close-menu");
+
+            bar.onclick = function () {
+                menuOverlay.style.opacity = 1;
+                menuOverlay.style.visibility = "visible";
+                menuDrawer.style.transform = "translateX(0)";
+            };
+
+            function closeMenu() {
+                menuOverlay.style.opacity = 0;
+                menuOverlay.style.visibility = "hidden";
+                menuDrawer.style.transform = "translateX(-100%)";
+            }
+
+            menuOverlay.onclick = function () {
+                closeMenu();
+            };
+
+            iconClose.onclick = function () {
+                closeMenu();
+            };
+
+            // Add event listeners to menu items
+
+            const pcNav = document.querySelector("#pc-nav");
+            const mobileNav = document.querySelector("#mobile-nav");
+
+            mobileNav.innerHTML = pcNav.innerHTML;
+
+            document.querySelectorAll("#mobile-nav a").forEach((item) => {
+                item.addEventListener("click", () => {
+                    closeMenu();
+                });
+            });
+        </script>
     </body>
 </html>

@@ -1,0 +1,267 @@
+/* PC */
+@media screen and (min-width: 992px) {
+    .mobile-header {
+        display: none;
+    }
+
+    .menu-bars {
+        display: none;
+    }
+
+    .action-btn__mobile {
+        display: none;
+    }
+
+    .view-all {
+        display: none;
+    }
+}
+
+/* Tablet & Mobile */
+
+@media screen and (max-width: 991px) {
+    .navbar {
+        position: relative;
+    }
+
+    .navbar .logo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .navbar ul {
+        display: none;
+    }
+
+    .toggle-menu {
+        font-size: 2.8rem;
+        color: #666;
+    }
+
+    .menu-ovelay {
+        position: fixed;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.3);
+        z-index: 1;
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.5s ease;
+    }
+
+    .menu-drawer {
+        position: fixed;
+        inset: 0 40% 0 0;
+        background: #fff;
+        z-index: 2;
+        padding: 60px;
+        transform: translateX(-100%);
+        transition: 0.5s ease;
+    }
+
+    .menu-drawer ul {
+        margin-top: 32px;
+    }
+
+    .menu-drawer ul a {
+        display: block;
+        color: #333;
+        padding: 14px 0;
+        font-weight: 600;
+    }
+
+    .separate1 {
+        border-top: 1px solid #ebebeb;
+    }
+
+    .menu-drawer__top {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .icon-close {
+        font-size: 20px;
+        color: red;
+    }
+
+    .hero-img {
+        display: none;
+    }
+
+    .hero .info {
+        width: 80%;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .clients .images {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .list-guide .guide-item {
+        margin: 0;
+        flex: 1;
+    }
+
+    .featured .list {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .stats .row {
+        flex-direction: column;
+    }
+    .stats .img-block,
+    .stats .info {
+        width: 100%;
+    }
+
+    .stats .info {
+        order: 1;
+        padding: 0;
+    }
+
+    .stats .img-block {
+        order: 2;
+        margin-top: 50px;
+    }
+
+    .stats .sub-title {
+        width: 70%;
+    }
+
+    .stats .info .desc {
+        width: 100%;
+    }
+
+    .stats .row-qty {
+        flex-direction: row;
+    }
+
+    .stats .qty {
+        font-size: 5rem;
+    }
+
+    .stats .qty-desc {
+        font-size: 1.5rem;
+    }
+
+    .subcription .image {
+        display: none;
+    }
+
+    .footer .row-top {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        row-gap: 80px;
+    }
+}
+
+/* Table */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .action-btn__mobile {
+        display: none;
+    }
+
+    .view-all {
+        display: none;
+    }
+}
+
+/* Mobile */
+@media screen and (max-width: 767px) {
+    .hide-on-mobile {
+        display: none;
+    }
+
+    .menu-drawer {
+        padding: 30px;
+        inset: 0 25% 0 0;
+    }
+
+    .hero-wrap {
+        height: calc(100vh - 78px);
+    }
+
+    .navbar .actions {
+        display: none;
+    }
+
+    .hero .title {
+        margin-top: 20px;
+        font-size: 5rem;
+    }
+
+    .hero .desc {
+        font-size: 1.3rem;
+    }
+
+    .clients .images {
+        row-gap: 20px;
+    }
+
+    .list-guide {
+        margin-top: 40px;
+        flex-direction: column;
+        row-gap: 30px;
+    }
+
+    .featured .link {
+        display: none;
+    }
+
+    .featured .list {
+        grid-template-columns: 1fr;
+    }
+
+    .featured .link-moblie {
+        margin-top: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #0689ff;
+        font-size: 1.8rem;
+        font-weight: 600;
+    }
+    .featured .link-moblie .arrow {
+        margin-left: 8px;
+    }
+
+    .stats .sub-title {
+        width: 100%;
+        font-size: 3rem;
+    }
+
+    .stats .info .desc {
+        font-size: 1.3rem;
+    }
+
+    .stats .img-block .image {
+        width: 100%;
+    }
+
+    .stats .row-qty {
+        flex-direction: column;
+        align-items: center;
+        row-gap: 60px;
+    }
+
+    .subcription .body {
+        height: auto;
+    }
+
+    .subcription .info {
+        padding: 32px;
+    }
+
+    .footer .row-top {
+        grid-template-columns: 1fr;
+        row-gap: 50px;
+    }
+
+    .footer .row-bottom {
+        flex-direction: column;
+        row-gap: 22px;
+        align-items: flex-start;
+    }
+}
